@@ -1,0 +1,93 @@
+$height: 70vmin
+$width: 70vmin
+$slider--margin: 4vmin
+$duration: 600ms
+$easeFn: cubic-bezier(0.25, 0.46, 0.45, 0.84)
+
+
+*, *:before, *:after
+  box-sizing: border-box
+
+
+html, body
+  height: 100%
+  background-color: #e5e5e5
+
+#root
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+  width: 100%
+  overflow-x: hidden
+
+.slider
+  height: $height
+  width: $width
+  position: relative
+  margin: 0 auto
+
+.slider__wrapper
+  display: flex
+  position: absolute
+  margin: 0 calc(#{$slider--margin * -1})
+  transition: transform $duration $easeFn
+
+.slide
+  height: $height
+  width: $width
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 1rem
+  border-radius: 20px
+  background-color: #FFFFFF
+  margin: 0 $slider--margin
+  opacity: .25
+
+  h3
+    color: #fad4d5
+    text-align: center
+
+  button
+    margin: 1rem
+    background-color: #232b6a
+    color: #FFFFFF
+    border-radius: 20px
+    font-weight: bold
+    font-size: 1rem
+
+
+  section
+    text-align: center
+
+    h3
+      margin: 0px
+      color: #232b6a
+    p
+      margin: 0px
+  .wish__placeholder
+    margin-top: 1rem
+    display: flex
+    p
+      height: 15vmin
+      width: 15vmin
+      border-radius: 100%
+      background-color: lightgrey
+      margin: 0 1rem
+
+
+.slide--current
+  opacity: 1
+  pointer-events: auto
+  user-select: auto
+
+.slide--previous:hover
+  cursor: w-resize
+  opacity: .75
+
+.slide--next:hover
+  cursor: e-resize
+  opacity: .75
+
