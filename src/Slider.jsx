@@ -5,7 +5,7 @@ import Slide from "./Slide";
 const numberOfSlides = [0, 1, 2, 3]
 
 const Slider = () => {
-    const [current, setCurrent] = useState(1)
+    const [current, setCurrent] = useState(0)
     const wrapperTransform = {
         'transform': `translateX(-${current * (100 / numberOfSlides.length)}%)`
     }
